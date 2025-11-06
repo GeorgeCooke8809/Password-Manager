@@ -20,6 +20,7 @@ class login_window(tk.Tk):
         self.geometry(f"{size[0]}x{size[1]}")
         self.title(title)
         self.resizable(width = False, height = False)
+        self.option_add("*Background", "White")
         self.config(bg = bg)
 
         self.menu = login_frame(self)
@@ -36,13 +37,13 @@ class login_frame(Frame):
         self.create_widgets()
 
     def create_widgets(self):
-        self.username_text = Label(self, text = "Username:", font = (font, 20, "bold"), bg = bg)
+        self.username_text = Label(self, text = "Username:", font = (font, 20, "bold"))
         self.username_entry = Entry(self, font = (font, 15), bg = bg)
-        self.password_text = Label(self, text = "Password:", font = (font, 20, "bold"), bg = bg)
+        self.password_text = Label(self, text = "Password:", font = (font, 20, "bold"))
         self.password_entry = Entry(self, font = (font, 15), bg = bg)
         self.submit_button = Button(self, text = "Submit", font = (font, 20, "bold"), command = self.__submit, bg = contrast, fg = contrast_text, border = 0)
         self.create_account_button = Button(self, text = "Create Account", font = (font, 20, "bold"), command = lambda : create_account_window("Create New Account", (350, 500)), bg = contrast_2, fg = contrast_2_text, border = 0)
-        self.fail_text = Label(self, text = "Your username or password is incorrect.", font = (font, 10), fg = bg, bg = bg)
+        self.fail_text = Label(self, text = "Your username or password is incorrect.", font = (font, 10), fg = bg)
 
         self.draw_widgets()
         
@@ -79,6 +80,7 @@ class create_account_window(tk.Toplevel):
         self.title(title)
         self.geometry(f"{size[0]}x{size[1]}")
         self.resizable(width = False, height = False)
+        self.option_add("*Background", "White")
 
         self.menu = account_frame(self)
 
@@ -87,20 +89,20 @@ class create_account_window(tk.Toplevel):
 class account_frame(Frame):
     def __init__(self, parent):
         super().__init__(parent)
-        self.config(bg = bg)
+        #self.config(bg = bg)
 
         self.pack(expand = True, fill = "x", padx = 50, pady = 50)
 
         self.create_widgets()
 
     def create_widgets(self):
-        self.create_username_text = Label(self, text = "Username:", font = (font, 20, "bold"), bg = bg)
-        self.create_username_entry = Entry(self, font = (font, 15), bg = bg)
-        self.password_text = Label(self, text = "Password:", font = (font, 20, "bold"), bg = bg)
-        self.create_password_entry = Entry(self, font = (font, 15), bg = bg)
+        self.create_username_text = Label(self, text = "Username:", font = (font, 20, "bold"))
+        self.create_username_entry = Entry(self, font = (font, 15))
+        self.password_text = Label(self, text = "Password:", font = (font, 20, "bold"))
+        self.create_password_entry = Entry(self, font = (font, 15))
         self.create_random_pass_button = Button(self, text = "Random Password", font = (font, 20, "bold"), command = self.__random_password, bg = contrast_2, fg = contrast_2_text, border = 0)
         self.create_submit_button = Button(self, text = "Submit", font = (font, 20, "bold"), command = self.__create_account, bg = contrast, fg = contrast_text, border = 0)
-        self.create_fail_text = Label(self, text = "That username is already taken.", font = (font, 10), fg = bg, bg = bg)
+        self.create_fail_text = Label(self, text = "That username is already taken.", font = (font, 10), fg = bg)
 
         self.draw_widgets()
 
