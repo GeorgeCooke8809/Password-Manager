@@ -83,6 +83,7 @@ def create_account():
     passing = functions.make_account(username, password)
 
     if passing:
+        print("Pass")
         create_root.quit()
     else:
         create_fail_text.config(fg = "Red")

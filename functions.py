@@ -24,4 +24,4 @@ def make_account(username, password):
         cursor.execute("SELECT COUNT(*)")
         ID = cursor.fetchone()[0]
         cursor.execute("INSERT INTO Users VALUES (?, ?, ?)", (ID, username, password)) # TODO: account ID
-        #cursor.
+        return True
