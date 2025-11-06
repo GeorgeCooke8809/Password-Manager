@@ -60,11 +60,11 @@ def create_account_window():
     create_password_entry.grid(row = 3, column = 0, sticky = N+S+E+W, pady = 5)
 
     # Submit Button
-    create_random_pass_button = Button(create_frame, text = "Random Password", font = (font, 20, "bold"), command = random_password, bg = contrast_2, fg = contrast_2_text)
+    create_random_pass_button = Button(create_frame, text = "Random Password", font = (font, 20, "bold"), command = random_password, bg = contrast_2, fg = contrast_2_text, border = 0)
     create_random_pass_button.grid(row = 4, column = 0, sticky = N+S+E+W, pady = 5)
 
     # Submit Button
-    create_submit_button = Button(create_frame, text = "Submit", font = (font, 20, "bold"), command = create_account, bg = contrast, fg = contrast_text)
+    create_submit_button = Button(create_frame, text = "Submit", font = (font, 20, "bold"), command = create_account, bg = contrast, fg = contrast_text, border = 0)
     create_submit_button.grid(row = 5, column = 0, sticky = N+S+E+W, pady = 5)
 
     # Fail Label
@@ -133,11 +133,11 @@ password_entry = Entry(frame, font = (font, 15), bg = bg)
 password_entry.grid(row = 3, column = 0, sticky = N+S+E+W, pady = 5)
 
 # Submit Button
-submit_button = Button(frame, text = "Submit", font = (font, 20, "bold"), command = submit, bg = contrast, fg = contrast_text)
+submit_button = Button(frame, text = "Submit", font = (font, 20, "bold"), command = submit, bg = contrast, fg = contrast_text, border = 0)
 submit_button.grid(row = 4, column = 0, sticky = N+S+E+W, pady = 5)
 
 # Create Button
-submit_button = Button(frame, text = "Create Account", font = (font, 20, "bold"), command = create_account_window, bg = contrast_2, fg = contrast_2_text)
+submit_button = Button(frame, text = "Create Account", font = (font, 20, "bold"), command = create_account_window, bg = contrast_2, fg = contrast_2_text, border = 0)
 submit_button.grid(row = 5, column = 0, sticky = N+S+E+W, pady = 5)
 
 # Fail Label
