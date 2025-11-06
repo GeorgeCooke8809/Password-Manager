@@ -59,7 +59,7 @@ def create_account_window():
     create_password_entry.grid(row = 4, column = 0, sticky = N+S+E+W, pady = 5)
 
     # Submit Button
-    create_random_pass_button = Button(create_frame, text = "Random Password", font = (font, 20, "bold"), command = create_account, bg = contrast_2, fg = contrast_2_text)
+    create_random_pass_button = Button(create_frame, text = "Random Password", font = (font, 20, "bold"), command = random_password, bg = contrast_2, fg = contrast_2_text)
     create_random_pass_button.grid(row = 3, column = 0, sticky = N+S+E+W, pady = 5)
 
     # Submit Button
@@ -72,6 +72,9 @@ def create_account_window():
 
     create_frame.pack(expand = True, fill = "x", padx = 50, pady = 50)
     create_root.mainloop()
+
+def random_password():
+    pass
 
 def create_account():
     username = create_username_entry.get()
