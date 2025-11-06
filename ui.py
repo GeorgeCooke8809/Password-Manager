@@ -123,7 +123,7 @@ class account_frame(Frame):
         passing = functions.make_account(username, password)
 
         if passing:
-            self.master.destroy() # TODO: IDK how to fix this
+            self.master.destroy()
         else:
             self.create_fail_text.config(fg = "Red")
 
