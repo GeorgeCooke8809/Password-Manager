@@ -21,5 +21,7 @@ def make_account(username, password):
     if temp != None:
         return False
     else:
-        cursor.execute("INSERT INTO Users VALUES (?, ?, ?)", (0, username, password))
-        cursor.commit()
+        cursor.execute("SELECT COUNT(*)")
+        ID = cursor.fetchone()[0]
+        cursor.execute("INSERT INTO Users VALUES (?, ?, ?)", (ID, username, password)) # TODO: account ID
+        #cursor.

@@ -30,7 +30,7 @@ def create_account_window():
     create_root.resizable(width = False, height = False)
     create_root.config(bg = bg)
 
-    create_frame = Frame(root, bg = bg)
+    create_frame = Frame(create_root, bg = bg)
 
     create_frame.rowconfigure(0, weight = 1) # Username label
     create_frame.rowconfigure(1, weight = 1) # Username field
@@ -56,11 +56,11 @@ def create_account_window():
 
     # Password entry
     create_password_entry = Entry(create_frame, font = (font, 15), bg = bg)
-    create_password_entry.grid(row = 4, column = 0, sticky = N+S+E+W, pady = 5)
+    create_password_entry.grid(row = 3, column = 0, sticky = N+S+E+W, pady = 5)
 
     # Submit Button
     create_random_pass_button = Button(create_frame, text = "Random Password", font = (font, 20, "bold"), command = random_password, bg = contrast_2, fg = contrast_2_text)
-    create_random_pass_button.grid(row = 3, column = 0, sticky = N+S+E+W, pady = 5)
+    create_random_pass_button.grid(row = 4, column = 0, sticky = N+S+E+W, pady = 5)
 
     # Submit Button
     create_submit_button = Button(create_frame, text = "Submit", font = (font, 20, "bold"), command = create_account, bg = contrast, fg = contrast_text)
@@ -68,7 +68,7 @@ def create_account_window():
 
     # Fail Label
     create_fail_text = Label(create_frame, text = "That username is already taken.", font = (font, 10), fg = bg, bg = bg)
-    create_fail_text.grid(row = 6, column = 0, sticky = N+S+W, pady = 5)
+    create_fail_text.grid(row = 6, column = 0, sticky = N+S+E+W, pady = 5)
 
     create_frame.pack(expand = True, fill = "x", padx = 50, pady = 50)
     create_root.mainloop()
@@ -132,7 +132,7 @@ submit_button.grid(row = 5, column = 0, sticky = N+S+E+W, pady = 5)
 
 # Fail Label
 fail_text = Label(frame, text = "Your username or password is incorrect.", font = (font, 10), fg = bg, bg = bg)
-fail_text.grid(row = 6, column = 0, sticky = N+S+W, pady = 5)
+fail_text.grid(row = 6, column = 0, sticky = N+S+E+W, pady = 5)
 
 
 frame.pack(expand = True, fill = "x", padx = 50, pady = 50)
