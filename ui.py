@@ -1,5 +1,6 @@
 import functions
 from tkinter import *
+import ctypes
 
 # Pallet
 bg = "White"
@@ -17,7 +18,8 @@ def submit():
     passing = functions.check_password(username, password)
 
     if passing:
-        pass
+        ctypes.windll.user32.MessageBoxW(0, "Successfully Logged In", "Correct", 1)
+        fail_text.config(fg = bg)
     else:
         fail_text.config(fg = "Red")
 
@@ -84,7 +86,7 @@ def create_account():
 
     if passing:
         print("Pass")
-        create_root.quit()
+        create_root.destroy()
     else:
         create_fail_text.config(fg = "Red")
 
