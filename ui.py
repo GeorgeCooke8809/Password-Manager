@@ -1,5 +1,6 @@
 import functions
 from tkinter import *
+import random
 
 # Pallet
 bg = "White"
@@ -74,7 +75,15 @@ def create_account_window():
     create_root.mainloop()
 
 def random_password():
-    pass
+    temp_string = ""
+
+    characters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~']
+
+    for i in range(15):
+        temp_string = f"{temp_string}{random.choice(characters)}"
+
+    create_password_entry.delete(0, END)
+    create_password_entry.insert(0,temp_string)
 
 def create_account():
     username = create_username_entry.get()
