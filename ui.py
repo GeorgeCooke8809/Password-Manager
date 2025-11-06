@@ -39,8 +39,7 @@ def create_account_window():
     create_frame.rowconfigure(2, weight = 1) # Password label
     create_frame.rowconfigure(3, weight = 1) # Password field
     create_frame.rowconfigure(4, weight = 1) # Submit button
-    create_frame.rowconfigure(5, weight = 1) # Random Password Button
-    create_frame.rowconfigure(6, weight = 1) # Fail text
+    create_frame.rowconfigure(5, weight = 1) # Fail text
 
     create_frame.columnconfigure(0, weight = 1)
 
@@ -61,22 +60,15 @@ def create_account_window():
     create_password_entry.grid(row = 3, column = 0, sticky = N+S+E+W, pady = 5)
 
     # Submit Button
-    create_random_pass_button = Button(create_frame, text = "Random Password", font = (font, 20, "bold"), command = random_password, bg = contrast_2, fg = contrast_2_text)
-    create_random_pass_button.grid(row = 4, column = 0, sticky = N+S+E+W, pady = 5)
-
-    # Submit Button
     create_submit_button = Button(create_frame, text = "Submit", font = (font, 20, "bold"), command = create_account, bg = contrast, fg = contrast_text)
-    create_submit_button.grid(row = 5, column = 0, sticky = N+S+E+W, pady = 5)
+    create_submit_button.grid(row = 4, column = 0, sticky = N+S+E+W, pady = 5)
 
     # Fail Label
     create_fail_text = Label(create_frame, text = "That username is already taken.", font = (font, 10), fg = bg, bg = bg)
-    create_fail_text.grid(row = 6, column = 0, sticky = N+S+E+W, pady = 5)
+    create_fail_text.grid(row = 5, column = 0, sticky = N+S+E+W, pady = 5)
 
     create_frame.pack(expand = True, fill = "x", padx = 50, pady = 50)
     create_root.mainloop()
-
-def random_password():
-    pass
 
 def create_account():
     username = create_username_entry.get()
